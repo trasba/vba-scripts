@@ -1,4 +1,4 @@
-Private Sub DecryptStandardInbox()
+Sub DecryptStandardInbox()
     Set oOutlook = CreateObject("Outlook.Application")
     Set oNamespace = oOutlook.GetNamespace("MAPI")
     If MsgBox("Decrypt all emails in Folder " & oNamespace.GetDefaultFolder(6).Name & " (no Subfolders)?", vbYesNo) = 6 Then
