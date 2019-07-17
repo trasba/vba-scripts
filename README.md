@@ -1,6 +1,7 @@
 # vba-scripts
 ### DecryptStandardInbox
 Script to decrypt all messages in the standard inbox of outlook.
+additionally the Sub GetSelectedItems() decrypts only the currently selected items
 
 #### setup
 .bas file can be imported under developer options in outlook
