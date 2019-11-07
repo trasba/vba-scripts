@@ -14,7 +14,6 @@ Sub StandardInbox()
     Debug.Print "Finished"
     
 End Sub
-
 Function ProcessFolders(ByVal objCurrentFolder As Outlook.Folder)
     If objCurrentFolder.DefaultItemType = olMailItem Then
        Const PR_SECURITY_FLAGS = "http://schemas.microsoft.com/mapi/proptag/0x6E010003"
