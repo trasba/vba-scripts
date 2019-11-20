@@ -21,6 +21,8 @@ Function ProcessFolders(ByVal objCurrentFolder As Outlook.Folder)
        ulFlags = ulFlags Or &H0
        Debug.Print objCurrentFolder.Name
        For i = objCurrentFolder.Items.Count To 1 Step -1
+           'DoEvents to retain responsiveness
+            DoEvents
             Set objMail = objCurrentFolder.Items(i)
             Debug.Print objMail.Subject
             If objMail.Class = "olMail" Or objMail.Class = "43" Then
@@ -61,6 +63,8 @@ Sub GetSelectedItems()
  Set myOlExp = Application.ActiveExplorer
  Set myOlSel = myOlExp.Selection
  For x = 1 To myOlSel.Count
+    'DoEvents to retain responsiveness
+    DoEvents
     'MsgTxt = MsgTxt & myOlSel.Item(x).SenderName & ";"
     Debug.Print myOlSel.Item(x).MessageClass
     If myOlSel.Item(x).MessageClass = "IPM.Note.SMIME" Then
@@ -74,5 +78,4 @@ Sub GetSelectedItems()
  Next x
  'MsgBox MsgTxt
  MsgBox ("Ende")
- 
-End Sub
+ End Sub
